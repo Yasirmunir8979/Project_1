@@ -1,0 +1,142 @@
+﻿@page "/Doctor"
+
+@using Project_1.Shared;
+<!DOCTYPE Html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Project_1</title>
+    <base href="/" />
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/app.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet"/>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link href="Project_1.Client.styles.css" rel="stylesheet" />
+</head>
+<body>
+    <section>
+        <header>
+            <img src="/Images/1.jpg" alt="logo" />
+            <nav>
+                <a href="/">Home</a>
+                <a href="/About Us">About Us</a>
+                <a href="/Diagnostic Form">Diagnostic Form</a>
+                <a href="/Doctor">Doctor</a>
+                <a href="/History">History</a>
+                <a href="/Contact Us">Contact Us</a>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+                <button type="submit">Search</button>
+            </div>
+        </header>
+        <!-- Doctor Profiles -->
+        <div class="doctor-profiles">
+            <div class="doctor-profile">
+                <img src="/Images/doctor1.jpg" alt="Doctor 1">
+                <h3>Dr. John Doe</h3>
+                <p>Cardiologist</p>
+            </div>
+            <div class="doctor-profile">
+                <img src="/Images/doctor2.jpg" alt="Doctor 2">
+                <h3>Dr. smanta smith</h3>
+                <p>Endocrinologist</p>
+            </div>
+            <div class="doctor-profile">
+                <img src="/Images/doctor3.jpg" alt="Doctor 3">
+                <h3>Dr. Rubina</h3>
+                <p>Neurologist</p>
+            </div>
+        </div>
+
+        <!-- Appointment Form -->
+        <h3>Book an Appointment</h3>
+
+        <EditForm Model="@appointmentModel" OnValidSubmit="HandleValidSubmit">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
+            <div class="form-group">
+                <label for="Doctor">Select Doctor:</label>
+                <InputSelect id="Doctor" @bind-Value="appointmentModel.Doctor">
+                    <option value="Dr. John Doe">Dr. John Doe - Cardiologist</option>
+                    <option value="Dr. smanta smith">Dr. smanta smith - Endocrinologist</option>
+                    <option value="Dr. Rubina">Dr. Rubina - Neurologist</option>
+                </InputSelect>
+            </div>
+
+            <div class="form-group">
+                <label for="Date">Select Date:</label>
+                <InputDate id="Date" @bind-Value="appointmentModel.Date"></InputDate>
+            </div>
+
+            <div class="form-group">
+                <label for="AdditionalNotes">Additional Notes:</label>
+                <InputTextArea id="AdditionalNotes" @bind-Value="appointmentModel.AdditionalNotes"></InputTextArea>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Book Appointment</button>
+            </div>
+        </EditForm>
+
+        @code {
+            private AppointmentModel appointmentModel = new AppointmentModel();
+
+            private async void HandleValidSubmit()
+            {
+                // Save the appointment data to the database using Entity Framework Core
+                var newAppointment = new AppointmentModel
+            {
+                Doctor = appointmentModel.Doctor,
+                Date = appointmentModel.Date,
+                AdditionalNotes = appointmentModel.AdditionalNotes
+            };
+            
+                using var dbContext = new AppDbContext();
+
+                dbContext.Appointments.Add(newAppointment);
+                await dbContext.SaveChangesAsync();
+
+                // Reset the form after submission
+                appointmentModel = new AppointmentModel();
+            }
+        }
+        <!-- Footer -->
+        <footer>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h4>About Us</h4>
+                    <p>Discover more about our mission to predict and prevent diabetes through advanced technology.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/About Us">About Us</a></li>
+                        <li><a href="/Diagnostic Form">Diagnostic Form</a></li>
+                        <li><a href="/History">History</a></li>
+                        <li><a href="/Contact Us">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <p>Email: info@diabetesprediction.com</p>
+                    <p>Phone: +1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Diabetes Prediction. All rights reserved.</p>
+            </div>
+        </footer>
+    </section>
+</body>
+
+ </html>
+<h3>Doctor</h3>
+
+@code {
+
+}

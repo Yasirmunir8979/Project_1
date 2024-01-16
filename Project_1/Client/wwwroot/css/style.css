@@ -1,0 +1,341 @@
+﻿/* Reset some default styles */
+/* Reset some default styles */
+body, h1, h2, h3, p, div, img, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-color: aliceblue; /* Background color */
+    margin: 0; /* Remove default body margin */
+}
+
+section {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 20px;
+    overflow: hidden; /* Clear the floats */
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007bff; /* Header background color */
+    padding: 10px; /* Add padding to give some space around the elements */
+    color: white; /* Header text color */
+}
+
+    header img {
+        height: 40px; /* Adjust logo height as needed */
+        margin-right: 10px; /* Adjust margin between logo and navigation */
+    }
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+    nav a {
+        text-decoration: none;
+        color: white; /* Link text color */
+        margin: 0 8px; /* Adjust margin between navigation links */
+    }
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+    .search-bar input {
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-right: 8px;
+    }
+
+    .search-bar button {
+        background-color: #28a745; /* Button background color */
+        color: white; /* Button text color */
+        padding: 8px 12px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+        header img {
+            margin-bottom: 10px;
+            margin-right: 0; /* Remove right margin for better alignment in mobile view */
+        }
+
+    nav {
+        margin-top: 10px; /* Add margin for better spacing in mobile view */
+    }
+
+        nav a {
+            margin: 5px 0;
+        }
+
+    .search-bar {
+        margin-top: 10px; /* Add margin for better spacing in mobile view */
+    }
+}
+
+/* Your existing styles here */
+
+/* About Us page styles */
+.about-us {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+    .about-us h2 {
+        color: #28a745; /* Heading color */
+    }
+
+    .about-us p {
+        font-size: 1.1em;
+        line-height: 1.6;
+        margin-top: 10px;
+    }
+
+
+/* Your existing styles here */
+
+/* Doctor page styles */
+.doctor-profiles {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.doctor-profile {
+    text-align: center;
+}
+
+    .doctor-profile img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+    }
+
+.appointment-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+    .appointment-form h2 {
+        color: #28a745; /* Heading color */
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+    height: 120px;
+}
+
+button {
+    background-color: #28a745; /* Button background color */
+    color: white; /* Button text color */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    button:hover {
+        background-color: #218838; /* Button background color on hover */
+    }
+
+
+
+/* Your existing styles here */
+
+/* Diagnostic form styles */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+    height: 120px;
+}
+
+button {
+    background-color: #007bff; /* Button background color */
+    color: white; /* Button text color */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    button:hover {
+        background-color: #0056b3; /* Button background color on hover */
+    }
+
+.validation-message {
+    color: #dc3545; /* Validation message color */
+    margin-top: 5px;
+}
+
+/*contact us*/
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-color: #f8f9fa; /* Background color */
+    margin: 0; /* Remove default body margin */
+}
+
+section {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 20px;
+    overflow: hidden; /* Clear the floats */
+}
+
+/* Contact Form styles */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+    .contact-form h2 {
+        color: #28a745; /* Heading color */
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+    height: 120px;
+}
+
+button {
+    background-color: #28a745; /* Button background color */
+    color: white; /* Button text color */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    button:hover {
+        background-color: #218838; /* Button background color on hover */
+    }
+
+
+
+/* Footer styles */
+footer {
+    background-color: #343a40; /* Footer background color */
+    color: white; /* Footer text color */
+    padding: 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-section {
+    max-width: 300px;
+}
+
+    .footer-section h4 {
+        color: #28a745; /* Heading color */
+    }
+
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+    }
+
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.8em;
+}
+
+
